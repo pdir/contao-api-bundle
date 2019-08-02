@@ -36,7 +36,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Pdir\\PdirBundle\\": "src/"
+            "Pdir\\ApiBundle\\": "src/"
         }
     },
     "autoload-dev": {
