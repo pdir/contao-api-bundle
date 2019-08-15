@@ -1,0 +1,6 @@
+parameters:
+    rest_api_disabled:
+        false
+    # use all or comma separated fields
+    rest_api_allowed_fields:
+        id,pid,sorting,title,alias,type,mainTitle,mainPageTitle,pageTitle,hide,language,description,elements,html,articles,singleSRC,multiSRC,orderSRC,imageUrl,fullSize,cssID,headline,text,type,addImage,size

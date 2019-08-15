@@ -1,26 +1,7 @@
 services:
-    _instanceof:
-        Contao\CoreBundle\Framework\FrameworkAwareInterface:
-            calls:
-                - ["setFramework", ["@contao.framework"]]
-
-        Symfony\Component\DependencyInjection\ContainerAwareInterface:
-            calls:
-                - ["setContainer", ["@service_container"]]
-
-# Read the documentation: https://symfony.com/doc/master/bundles/FOSRestBundle/index.html
-fos_rest:
-    routing_loader:
-        default_format: json
-        include_format: false
-    body_listener: true
-    format_listener:
-        rules:
-            - { path: '^/', priorities: ['json'], fallback_format: json, prefer_extension: false }
-    param_fetcher_listener: true
-    access_denied_listener:
-        json: true
-    view:
-        view_response_listener: 'force'
-        formats:
-            json: true
+    rest_api.controller:
+        class: Pdir\ApiBundle\Controller\ApiController
+        arguments:
+            - "@service_container"
+            - "@contao.framework"
+        public: true
